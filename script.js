@@ -1,5 +1,5 @@
 // Assignment Code
-// TODO declare your variables at the top
+// Declare variables at the top
 var generateBtn = document.querySelector("#generate");
 var length; 
 var uppers = true;
@@ -10,11 +10,9 @@ var specials;
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
-  //
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 
@@ -51,18 +49,13 @@ function generatePassword() {
     // choose random letters of that passwordGenArray
   }
 
-  // more logic here to determine what to include 
-
-
-  // more logic here to loop to determine random characters depending on length
-
-
   // return randomly generated password 
   return password;
 }
 
-// TODO declare your functions
+// Declare functions
 function passwordLength() {
+  // Prompt user to select a number between 8-128.
   length = prompt("Pick a number between 8 and 128")
   if (length > 128 || length < 8){
     alert("Password length must be between 8 and 128 characters")
@@ -70,8 +63,6 @@ function passwordLength() {
 
   } 
   return length;
-// Prompt user to select a number bw 8-128. If they do not choose array
-
 }
 
 function passwordOptions() {
@@ -82,7 +73,7 @@ function passwordOptions() {
   specials = confirm("Do you want special characters in your password?");
 
   if (!lowers && !uppers && !numbers && !specials) {
-    alert("You select no for all options, please do not use this password generator!")
+    alert("You select no for all options, please choose at least one option for the password generator to work!")
     passwordOptions()
   }
 
@@ -94,7 +85,5 @@ function passwordOptions() {
   }
 }
 
-
-// TODO call functions and event listener down here
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
